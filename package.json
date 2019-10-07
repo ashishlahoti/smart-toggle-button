@@ -1,0 +1,42 @@
+{
+  "name": "@aklahoti/smart-toggle-button",
+  "version": "1.0.2",
+  "description": "Smart Toggle Button",
+  "main": "dist/smart-toggle-button.js",
+  "scripts": {
+    "start": "npm run compile && concurrently \"owc-dev-server --open demo\" \"tsc -w\"",
+    "clean": "del-cli dist build",
+    "prettier": "prettier src/** demo/** --write",
+    "tslint": "tslint src/**/*.ts",
+    "compile": "tsc && cpx \"src/**/!(*.ts)\" dist",
+    "prepublishOnly": "npm run clean && npm run prettier && npm run compile"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^2.2.0",
+    "owc-dev-server": "^0.3.0",
+    "concurrently": "^4.1.0",
+    "cpx": "^1.5.0",
+    "del-cli": "^1.1.0",
+    "make-dir-cli": "^2.0.0",
+    "prettier": "^1.17.0",
+    "tslint": "^5.16.0",
+    "tslint-sonarts": "^1.9.0",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "lit-html": "1.0.0",
+    "lit-element": "2.1.0"
+  },
+  "files": [
+    "dist",
+    "src",
+    "demo",
+    "package.json"
+  ],
+  "aklahoti": {
+    "templateVersion": "1.0"
+  }
+}
